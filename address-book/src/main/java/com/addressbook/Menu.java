@@ -55,11 +55,12 @@ public class Menu {
 		}
 	     public void display()
         {
-	    	 System.out.println("Menu items are:");
+	    	 int i=0;
+	    	 System.out.println("Enter your choice:");
         	for(MenuItem obj:al)
         	{
         		
-        		System.out.println(obj.name);
+        		System.out.println( ++i +")" +obj.name);
         		
         	}
         }

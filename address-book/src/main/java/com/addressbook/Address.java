@@ -13,47 +13,47 @@ public class Address {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public int setId(int id) {
+		return this.id = id;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String setName(String name) {
+		return this.name = name;
 	}
 
 	public String getStreet() {
 		return street;
 	}
 
-	public void setStreet(String street) {
-		this.street = street;
+	public String setStreet(String street) {
+		return this.street = street;
 	}
 
 	public String getCity() {
 		return city;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public String setCity(String city) {
+		return this.city = city;
 	}
 
 	public String getCountry() {
 		return country;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
+	public String setCountry(String country) {
+		return this.country = country;
 	}
 
 	public int getZip() {
 		return zip;
 	}
 
-	public void setZip(int zip) {
-		this.zip = zip;
+	public int setZip(int zip) {
+		return this.zip = zip;
 	}
 }
