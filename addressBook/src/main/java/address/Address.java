@@ -1,7 +1,14 @@
 package address;
 import java.util.Scanner;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity 
+@Table(name="newAddress")
 public class Address {
+	@Id
 	public int id;
 	public String name;
 	public String street;

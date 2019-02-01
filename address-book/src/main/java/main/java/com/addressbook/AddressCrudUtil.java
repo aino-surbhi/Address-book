@@ -8,16 +8,11 @@ import java.util.Set;
 
 public class AddressCrudUtil {
 	
-	HashMap<String, Address> addrMap = new HashMap<>();
-	//Address ad=new Address();
+	HashMap<String, Address> addrMap = new HashMap<String ,Address>();
+	
 	Scanner sc=new Scanner(System.in);
 	
-	/*void create(String name,Address ad)
-	{
-		addrMap.put(name,ad);
-		System.out.println(addrMap);
 	
-	}*/
 	void read(String name,Address address1)
 	{
 		
@@ -45,7 +40,7 @@ public class AddressCrudUtil {
 		ad1.setCountry(sc.next());
 		System.out.println("enter the zipcode");
 		ad1.setZip(sc.nextInt());	
-		//return addrMap.put(name,ad);
+		
 		addrMap.replace(name,ad1);
 		
 		

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
-	    int id;
-	    String name;
+	   public int id;
+	   public String name;
 	
 	//	MenuItem m=new MenuItem();
 		ArrayList<MenuItem> al=new ArrayList<MenuItem>();

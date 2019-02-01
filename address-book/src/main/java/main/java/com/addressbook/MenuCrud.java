@@ -14,7 +14,7 @@ public class MenuCrud {
     	  
     	  m.setName(sc.next());
       }*/
-	  Menu createMenu()
+	  public Menu createMenu()
       {
     	 
     	  System.out.println("enter the menu");
@@ -29,7 +29,7 @@ public class MenuCrud {
 	  
 	  
 	  
-      void createItem(Menu m)
+      public void createItem(Menu m)
       {
     	 
     	   String name1 = null;
@@ -46,20 +46,6 @@ public class MenuCrud {
     	       name1=sc.next();
     	   }
       }
-   /*   public void MenuItemToMenu()
-      {
-    	  MenuItem mi=new MenuItem(sc.next());
-    	  m.addMenuItem(mi);
-    	  
-      }*/
-      
-   /*   public void display()
-      {
-      	for(String obj:m.al)
-      	{
-      		
-      		System.out.println(obj);
-      		
-      	}*/
+ 
       
 }

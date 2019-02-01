@@ -1,7 +1,5 @@
 package address;
 
-import java.util.HashMap;
-
 public interface AddressStore {
 	
 	public int remove(String name);
