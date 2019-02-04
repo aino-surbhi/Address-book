@@ -2,11 +2,22 @@ package domain;
 
 public class DbBackend implements Backend{
 	
-	private String url = "jdbc:mysql://localhost:3306/addressBook";
-	private String username ="root";
-	private String password = "root";
+	private String url;
+	private String username;
+	private String password;
+	//private String dbDriver="com.mysql.jdbc.Driver";
+	
+	
+	
+	@Override
+	public String toString() {
+		return url+" "+username+" "+password;
+	}
 	//AddBackend addBackend1;
 	public DbBackend(int i, String string) {
+		super();
+	}
+	public DbBackend() {
 		super();
 	}
 	public String getUrl() {

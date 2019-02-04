@@ -28,6 +28,7 @@ public class FileSystemBackend extends MenuItem {
 	    fileBackend.setPath(scanner.nextLine());
 	    System.out.println(fileBackend);
 	    manage.addPathList(fileBackend);
+	    
 	}
 
 	@Override

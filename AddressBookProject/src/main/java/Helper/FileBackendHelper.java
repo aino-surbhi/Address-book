@@ -22,6 +22,7 @@ public class FileBackendHelper implements BackendHelper{
 
 	ManageBackend manage;
 	Backend current;
+	Address address=new Address();
 
 	public Backend getCurrent() {
 		return current;
@@ -31,11 +32,19 @@ public class FileBackendHelper implements BackendHelper{
 		this.current = current;
 	}
 
-	ArrayList<Address> addList=new ArrayList<Address>();
+	private ArrayList<Address> addList=new ArrayList<Address>();
+	public ArrayList<Address> getAddList() {
+		return addList;
+	}
+
+	public void setAddList(ArrayList<Address> addList) {
+		this.addList = addList;
+	}
+
 	public FileBackendHelper(ManageBackend manage) {
 		this.manage=manage;
 		current=manage.getCurrentBackend();
-		load1();
+		load();
 	}
 
 	@Override
@@ -47,7 +56,7 @@ public class FileBackendHelper implements BackendHelper{
 		try
 		{    
 			//Saving of object in a file 
-			FileOutputStream file = new FileOutputStream(current.toString()); 
+			FileOutputStream file = new FileOutputStream(manage.getCurrentBackend().toString()); 
 			ObjectOutputStream out = new ObjectOutputStream(file); 
 
 			// Method for serialization of object 
@@ -64,10 +73,10 @@ public class FileBackendHelper implements BackendHelper{
 		} 
 
 	}
-	public void load1() {
+	public void load() {
 		try
 		{   
-			FileInputStream file = new FileInputStream(current.toString()); 
+			FileInputStream file = new FileInputStream(manage.getCurrentBackend().toString()); 
 			ObjectInputStream in = new ObjectInputStream(file); 
 			try {
 				addList=(ArrayList<Address>)in.readObject();
@@ -78,18 +87,18 @@ public class FileBackendHelper implements BackendHelper{
 			file.close();  
 		} 
 
-		catch(IOException ex) 
+		catch(IOException e) 
 		{ 
 			System.out.println("IOException is caught"); 
 		} 
 	}
-	public void display1() {
+	/*public void display1() {
 		for(Address ad:addList) {
 			System.out.println(ad);
 		}
-	}
+	}*/
 	public void create() {
-		Address address=new Address();
+	//	Address address=new Address();
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("enter the name");
 		address.setName(scanner.next());
@@ -105,6 +114,7 @@ public class FileBackendHelper implements BackendHelper{
 		addList.add(address);
 	}
 	public void read() {
+		load();
 		System.out.println("Enter The Detaiils To Read Address :");
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter The Name :");
@@ -113,9 +123,10 @@ public class FileBackendHelper implements BackendHelper{
 		{
 			if(name.equals(address.getName()))
 			{
-				System.out.println(address.getEmailId());
+				System.out.println(getAddList());
+			//	System.out.println(getAddList().indexOf(2));
 
-				System.out.println(address.getPhoneNo());
+			//	System.out.println(address.getPhoneNo());
 			}
 		}
 	} 
@@ -123,6 +134,7 @@ public class FileBackendHelper implements BackendHelper{
 
 
 	public void update() {
+		load();
 		System.out.println("Enter The Details To Update the Address :");
 
 		Scanner scanner=new Scanner(System.in);
@@ -143,6 +155,7 @@ public class FileBackendHelper implements BackendHelper{
 	}
 
 	public void delete() {
+		load();
 		System.out.println("Enter The Details to Delete the Address :");
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter The Name  :");
